@@ -1,0 +1,5 @@
+numpy>=1.21.0
+opencv-python>=4.5
+onnxruntime-gpu>=1.10
+click
+pyaml
