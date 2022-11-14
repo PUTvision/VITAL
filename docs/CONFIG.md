@@ -1,22 +1,36 @@
+# Config documentation
+
+[Back to README](../README.md)
+
+
+```
 image_topic: /camera/rgb/image_raw
 mavros_altitude_topic: /mavros/altitude
 vis_infer: True
+```
 
+```
 camera:
   resolution: [1920, 1080]
   angles: [69.0, 54.0]
+```
 
+```
 density_estimator:
   path: './data/density_estimator.onnx'
   onnx_provider: cpu # tensorrt, cuda or cpu
   conf_thresh: 0.6
+```
 
+```
 keypoints_detector:
   path: './data/keypoints_detector.onnx'
   onnx_provider: cpu # tensorrt, cuda or cpu
   conf_thresh: 0.6
   std_thresh: 1e-3
+```
 
+```
 rotation_estimator:
   camera_matrix: [
     [1.44273560e+03, 0.00000000e+00, 960],
@@ -32,3 +46,6 @@ rotation_estimator:
     [0.204, 0.116, 0.0], #right
     [-0.204, 0.116, 0.0], #left      
   ]
+```
+
+[Back to README](../README.md)
