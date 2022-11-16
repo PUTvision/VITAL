@@ -2,17 +2,21 @@ from pathlib import Path
 import yaml
 
 
-def parse_yaml_params():
+def parse_yaml_params(path):
     """Parse ROS parameters.
 
     Returns:
         dict: Parsed ROS parameters.
     """
-    with open(Path(Path(__file__).resolve().parents[3], 'config.yaml'), 'r') as f:
+    with open(Path(path, 'config.yaml'), 'r') as f:
         try:
             params = yaml.safe_load(f)
         except yaml.YAMLError as exc:
             print(exc)
+
+    params['/vis_infer'] = params['vis_infer']
+    params['/image_topic'] = params['image_topic']
+    params['/mavros_altitude_topic'] = params['mavros_altitude_topic']
     
     params['/camera/resolution'] = params['camera']['resolution']
     params['/camera/angles'] = params['camera']['angles']

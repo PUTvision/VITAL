@@ -3,3 +3,4 @@ opencv-python>=4.5
 onnxruntime-gpu>=1.10
 click
 pyaml
+transforms3d

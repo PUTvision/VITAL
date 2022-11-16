@@ -1,9 +1,9 @@
 import cv2
 import numpy as np
 
-from visual_landing_provider.nn.density_estimator import DensityEstimator
-from visual_landing_provider.nn.keypoints_detector import KeypointsDetector
-from visual_landing_provider.nn.rotation_estimator import RotationEstimator
+from visual_landing_provider.vital.nn.density_estimator import DensityEstimator
+from visual_landing_provider.vital.nn.keypoints_detector import KeypointsDetector
+from visual_landing_provider.vital.nn.rotation_estimator import RotationEstimator
 
 class VisualPipelineWrapper:
     def __init__(self, base_path: str, config: dict, visualize: bool = False):
