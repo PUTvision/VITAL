@@ -1,4 +1,4 @@
-# Thing for developers
+# For developers
 
 [Back to README](../README.md)
 

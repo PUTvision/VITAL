@@ -15,24 +15,30 @@ This repository includes an image processing pipeline for accurate landing pad d
 
 ## Highlights
 
--   **Real-time** - the system is able to process the image in real time.
+- **ROS1/ROS2** compatible.
+
+- **Deep Learning** based pipeline.
+
+- **Real-time** performance.
 
 -   **Modular** - the system is modular and can be easily extended with new functionalities. It is easly adaptable to different cameras and landing targets.
 
--   **Autonomous landing** - the system is able to provide information about the target's position continuously, which allows to build a pipeline for landing on moving targets.
-
 -   **Safety** - the system is able to detect the presence of a human near the landing site.
 
--   **Precision landing** - the system is able to detect landing target with a precision of 1 cm.
+-   **Autonomous landing** - the system is able to provide information about the target's position continuously, which allows to build a pipeline for landing on moving targets.
+
+-   **Precision landing** - the system is able to detect landing target with a precision of 1 cm verified using Opti-Track.
 
 
 ## Prerequisites
 
-- ROS Melodic/Noetic. Pipeline was tested on Ubuntu 18.04 (NVIDIA Jetson Xavier NX) with ROS Melodic and Ubuntu 20.04 (PC) with ROS Noetic.
+- **ROS Melodic/Noetic** or **ROS2**. Pipeline was tested on Ubuntu 18.04 (NVIDIA Jetson Xavier NX) with ROS Melodic and Ubuntu 20.04 (PC) with ROS Noetic and ROS2 Foxy.
 - MAVROS. MAVROS is a ROS-Node that allows to communicate with the autopilot. It is used to get the altitude of the UAV.
 - `requirements.txt` - contains all the required python packages. To install them run `python3 -m pip install -r requirements.txt` in the virtual environment.
 
 ## Installation 
+
+#### ROS Melodic/Noetic
 
 * `cd catkin_ws/src`
 
@@ -42,18 +48,35 @@ This repository includes an image processing pipeline for accurate landing pad d
 
 * `catkin build`
 
+#### ROS2 Foxy
+
+* `cd ros2_ws/src`
+
+* `git clone https://github.com/PUTvision/VITAL.git`
+
+* `cd ../` 
+
+* `colcon build`
+
 ## Config documentation
 
 All configuration parameters from `config.yaml` are described in [config docs](./docs/CONFIG.md).
 
 ## Usage
 
+#### ROS Melodic/Noetic
+
 * `source devel/setup.bash`
 
 * `roslaunch visual_landing_provider visual_infer.launch`
 
+#### ROS2 Foxy
 
-## Thing for developers
+* `source install/setup.bash`
+
+* `ros2 launch visual_landing_provider visual_infer.launch.py`
+
+## For developers
 
 If you:
 - want to understand how the system works
@@ -69,3 +92,7 @@ If you use this code for your research, please cite our paper:
 ```
 (SOON)
 ```
+
+## Acknowledge
+
+We acknowledge the support of the TERRINet project and would like to express our gratitude to the GRVC team at Sevilla for their hospitality and help. Read more [here](https://putvision.github.io/article/terrinet-sevila-2022/).
