@@ -28,8 +28,6 @@ class VisualInference(Node):
 
         self.params = parse_yaml_params(self.base_path)
 
-        print(self.params)
-
         self.vis_infer = self.params['/vis_infer']
 
         self.pipeline = VisualPipelineWrapper(base_path=self.base_path, config=self.params, visualize=self.vis_infer)
