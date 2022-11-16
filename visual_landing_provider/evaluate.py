@@ -4,8 +4,8 @@ import cv2
 import numpy as np
 from pathlib import Path
 
-from visual_landing_provider.utils.common import parse_yaml_params 
-from visual_landing_provider.visual_pipeline_wrapper import VisualPipelineWrapper
+from vital.utils.common import parse_yaml_params 
+from vital.visual_pipeline_wrapper import VisualPipelineWrapper
 
 
 
@@ -52,7 +52,7 @@ class VisualEvaluation:
 @click.option('--source-path', required=True)
 @click.option('--visualize', is_flag=True)
 def main(source_path, visualize):
-    params = parse_yaml_params()
+    params = parse_yaml_params(Path(__file__).resolve().parents[2])
 
     ve = VisualEvaluation(params=params, source_path=source_path, visualize=visualize)
     ve.run_over_images()

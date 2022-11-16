@@ -5,5 +5,5 @@
     <rosparam param="base_path">file://$(find visual_landing_provider)</rosparam>
 
     <!-- Run node node -->
-    <node pkg="visual_landing_provider" type="visual_infer.py" name="visual_infer_node" required="true" output="screen" />
+    <node pkg="visual_landing_provider" type="visual_infer_ros1.py" name="visual_infer_node" required="true" output="screen" />
 </launch>
