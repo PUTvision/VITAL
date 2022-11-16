@@ -37,6 +37,7 @@ elseif( CATKIN_DEVEL_PREFIX OR CATKIN_BUILD_BINARY_PACKAGE )
     )
 
   catkin_package()
+  catkin_python_setup()
 
   include_directories(
     include
