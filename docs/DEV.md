@@ -34,6 +34,6 @@ Then you need to train the density estimator model with two classes: landing tar
 
 If your density estimator model is trained, you can train the keypoints detector model. You can use it to extract the region of interest and then annotate it with keypoints. Note that you need at least 4 keypoints to estimate the pose of the landing target.
 
-**Code for training the density estimator and keypoints detector models will be available soon.**
+**Code for training the density estimator and keypoints detector models is available [here](https://github.com/PUTvision/VITALPad).**
 
 [Back to README](../README.md)
